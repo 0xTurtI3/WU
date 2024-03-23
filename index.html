@@ -1,58 +1,615 @@
-<!DOCTYPE html>
-<html class="dark" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>turtle19017</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/css/themes.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.80.0" />
+<!doctype html>
+<html lang="vi">
+
+<head <meta charset="utf-8">
+
+    <title>Các thuật toán sắp xếp</title>
+
+    <meta name="description" content="Ước số chung lớn nhất">
+    <meta name="author" content="Nguyễn Hoàng Phú">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7034216194793692" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-    <div class="nav">
-        <a class="home" href="https://turtle19017.github.io/">turtle19017</a>
-        <a href="/about/">about</a>
-        <a onclick="switchTheme()">theme</a>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h2>TRÁO BÀI</h2>
+                <p>
+                    <smallG></smallG> <a href="https://nhpoj.net">nhpoj.net</a>
+                </p>
+            </section>
+
+            <section>
+                <!--sub secction 1-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h2>Ví dụ</h2>
+                    <div class="r-hstack justify-center">
+                        <div data-id="card1" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card4" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card8" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card9" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                </section>
+                <!--sub secction 2-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h2>Ví dụ</h2>
+                    <div class="r-hstack justify-center">
+                        <div data-id="card1" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card4" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card8" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card9" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <svg width="160" height="60" data-id="arrow1">
+                            <polygon points="0 30 80 60 160 30 140 30 140 0 20 0 20 30 0 30" style="fill:lime;stroke:purple;stroke-width:2;" />
+                            <text fill="#ffffff" font-size="24" font-family="Verdana" x="40" y="30">S(8, 2)</text>
+                        </svg>
+                </section>
+                <!--sub secction 3-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h2>Ví dụ</h2>
+                    <div class="r-hstack justify-center">
+                        <div data-id="card1" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card4" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card8" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card9" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <svg width="160" height="60" data-id="arrow1">
+                            <polygon points="0 30 80 60 160 30 140 30 140 0 20 0 20 30 0 30" style="fill:lime;stroke:purple;stroke-width:2;" />
+                            <text fill="#ffffff" font-size="24" font-family="Verdana" x="40" y="30">S(8, 2)</text>
+                        </svg>
+                    <div class="r-hstack justify-center">
+                        <div data-id="card11" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card12" style="background: red; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card13" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card14" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card15" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card16" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card17" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card18" style="background: red; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card19" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                </section>
+                <!--sub secction 4-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h2>Ví dụ</h2>
+                    <div class="r-hstack justify-center">
+                        <div data-id="card1" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card4" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card8" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card9" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <svg width="160" height="60" data-id="arrow1">
+                            <polygon points="0 30 80 60 160 30 140 30 140 0 20 0 20 30 0 30" style="fill:lime;stroke:purple;stroke-width:2;" />
+                            <text fill="#ffffff" font-size="24" font-family="Verdana" x="40" y="30">S(8, 2)</text>
+                        </svg>
+                    <div class="r-hstack justify-center">
+                        <div data-id="card11" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card18" style="background: red; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card12" style="background: red; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card13" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card14" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card15" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card16" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card17" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card19" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                </section>
+                <!--sub secction 5-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h2>Ví dụ</h2>
+                    <div class="r-hstack justify-center">
+                        <div data-id="card1" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card4" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card8" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card9" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <svg width="160" height="60" data-id="arrow1">
+                            <polygon points="0 30 80 60 160 30 140 30 140 0 20 0 20 30 0 30" style="fill:lime;stroke:purple;stroke-width:2;" />
+                            <text fill="#ffffff" font-size="24" font-family="Verdana" x="40" y="30">S(8, 2)</text>
+                        </svg>
+                    <div class="r-hstack justify-center">
+                        <div data-id="card11" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card18" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card12" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card13" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card14" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card15" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card16" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card17" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card19" style="background: magenta; width: 150px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <svg width="160" height="60" data-id="arrow2">
+                            <polygon points="0 30 80 60 160 30 140 30 140 0 20 0 20 30 0 30" style="fill:lime;stroke:purple;stroke-width:2;" />
+                            <text fill="#ffffff" font-size="24" font-family="Verdana" x="40" y="30">S(4, 7)</text>
+                        </svg>
+                </section>
+
+            </section>
+
+            <section>
+                <svg>
+				            <defs>
+                                <marker id="arrow" viewBox="0 -5 10 10" refX="5" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+                                  <path d="M0,-5L10,0L0,5" stroke="blue" stroke-width="2" fill="none"></path>
+                                </marker>
+                                <marker id="arrowred" viewBox="0 -5 10 10" refX="5" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+                                  <path d="M0,-5L10,0L0,5" stroke="red" stroke-width="2" fill="none"></path>
+                                </marker>
+                            </defs>
+                        </svg>
+                <!--sub secction 0-->
+                <section class="fragments">
+                    <h3>Cài đặt bằng danh sách mốc nối kép</h3>
+                    <ol>
+                        <li class="fragment; text-align:left">
+                            Lá bài i được mô tả là số nguyên i.
+                        </li>
+                        <li class="fragment; text-align:left">
+                            Sử dụng 2 mảng <strong>prv</strong> để lưu vị trí trước và <strong>nxt</strong> để lưu vị trí sau của một lá bài.
+                        </li>
+                        <li class="fragment; text-align:left">
+                            Phép tráo <strong>S(i, j)</strong> là thao tác xóa số i ra khỏi danh sách và chèn số i vào trước số j.
+                        </li>
+                    </ol>
+                </section>
+                <!--sub secction 1-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h3>Cài đặt bằng danh sách mốc nối kép</h3>
+                    <div class="r-hstack justify-center" width="630px">
+                        <svg width="70" height="50" data-id="nxt0">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[0]=1</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt1">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[1]=2</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt2">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[2]=3</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt3">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[3]=4</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt4">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[4]=5</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt5">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[5]=6</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt6">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[6]=7</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt7">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[7]=8</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt8">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[8]=9</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                    </div>
+                    <div class="r-hstack justify-center" width="600px">
+                        <div data-id="card0" style="background: gray; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">0</div>
+                        <div data-id="card1" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card4" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card8" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card9" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <div class="r-hstack justify-center" width="630px">
+                        <svg width="70" height="50" data-id="prv1">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[1]=0</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv2">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[2]=1</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv3">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[3]=2</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv4">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[4]=3</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv5">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[5]=4</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv6">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[6]=5</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv7">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[7]=6</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv8">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[8]=7</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv9">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[9]=8</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                    </div>
+                </section>
+
+                <!--sub secction 2-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h3>Cài đặt bằng danh sách mốc nối kép</h3>
+                    <div class="r-hstack justify-center" width="630px">
+                        <svg width="70" height="50" data-id="nxt0">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[0]=1</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt1">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[1]=2</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt2">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[2]=3</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt3">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[3]=4</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt4">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[4]=5</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt5">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[5]=6</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt6">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[6]=7</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt7">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[7]=8</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt8">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[8]=9</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                    </div>
+                    <div class="r-hstack justify-center" width="600px">
+                        <div data-id="card0" style="background: gray; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">0</div>
+                        <div data-id="card1" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card4" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card8" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card9" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <div class="r-hstack justify-center" width="630px">
+                        <svg width="70" height="50" data-id="prv1">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[1]=0</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv2">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[2]=1</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv3">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[3]=2</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv4">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[4]=3</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv5">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[5]=4</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv6">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[6]=5</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv7">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[7]=6</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv8">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[8]=7</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv9">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[9]=8</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                    </div>
+                    <svg width="160" height="60" data-id="arrow1">
+                            <polygon points="0 0 160 0 160 60 0 60" style="fill:lime;stroke:purple;stroke-width:2;" />
+                            <text fill="#ffffff" font-size="24" font-family="Verdana" x="40" y="40">S(8, 4)</text>
+                        </svg>
+                </section>
+
+                <!--sub secction 3-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h3>Cài đặt bằng danh sách mốc nối kép</h3>
+                    <div class="r-hstack justify-center" width="630px">
+                        <svg width="70" height="50" data-id="nxt0">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[0]=1</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt1">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[1]=2</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt2">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[2]=3</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt3">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[3]=4</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt4">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[4]=5</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt5">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[5]=6</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt6">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[6]=7</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="140" height="50" data-id="nxt7">
+                              <text fill="red" font-size="12" font-family="Verdana" x="50" y="10">nxt[7]=9</text>
+                              <path d="M 10 50 C 10 40 70 -10 130 40" stroke="red" stroke-width="4" fill="none" marker-end="url(#arrowred)"></path>
+                            </svg>
+                    </div>
+                    <div class="r-hstack justify-center" width="600px">
+                        <div data-id="card0" style="background: gray; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">0</div>
+                        <div data-id="card1" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card4" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card8" style="background: black; width: 50px; height: 50px; margin: 10px; border-radius: 5px; color: gray;">8</div>
+                        <div data-id="card9" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <div class="r-hstack justify-center" width="630px">
+                        <svg width="70" height="50" data-id="prv1">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[1]=0</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv2">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[2]=1</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv3">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[3]=2</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv4">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[4]=3</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv5">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[5]=4</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv6">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[6]=5</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv7">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[7]=6</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+
+                        <svg width="140" height="50" data-id="prv9">
+                              <text fill="red" font-size="12" font-family="Verdana" x="60" y="40">prv[9]=7</text>
+                              <path d="M 130 10 C 130 10 66 50 5 10" stroke="red" stroke-width="4" fill="none" marker-end="url(#arrowred)"></path>
+                            </svg>
+                    </div>
+                    <svg width="160" height="60" data-id="arrow1">
+                            <polygon points="0 0 160 0 160 60 0 60" style="fill:lime;stroke:purple;stroke-width:2;" />
+                            <text fill="#ffffff" font-size="24" font-family="Verdana" x="40" y="40">S(8, 4)</text>
+                        </svg>
+                </section>
+
+                <!--sub secction 4-->
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h3>Cài đặt bằng danh sách mốc nối kép</h3>
+                    <div class="r-hstack justify-center" width="630px">
+                        <svg width="70" height="50" data-id="nxt0">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[0]=1</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt1">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[1]=2</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt2">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[2]=3</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt3">
+                              <text fill="red" font-size="12" font-family="Verdana" x="0" y="10">nxt[3]=8</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="red" stroke-width="4" fill="none" marker-end="url(#arrowred)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt8">
+                              <text fill="red" font-size="12" font-family="Verdana" x="0" y="10">nxt[8]=4</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="red" stroke-width="4" fill="none" marker-end="url(#arrowred)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt4">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[4]=5</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt5">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[5]=6</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt6">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[6]=7</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="nxt7">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="0" y="10">nxt[7]=9</text>
+                              <path d="M 0 40 q 30 -40 55 0" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                    </div>
+                    <div class="r-hstack justify-center" width="600px">
+                        <div data-id="card0" style="background: gray; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">0</div>
+                        <div data-id="card1" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">1</div>
+                        <div data-id="card2" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">2</div>
+                        <div data-id="card3" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">3</div>
+                        <div data-id="card8" style="background: red; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">8</div>
+                        <div data-id="card4" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">4</div>
+                        <div data-id="card5" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">5</div>
+                        <div data-id="card6" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">6</div>
+                        <div data-id="card7" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">7</div>
+                        <div data-id="card9" style="background: magenta; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">9</div>
+                    </div>
+                    <div class="r-hstack justify-center" width="630px">
+                        <svg width="70" height="50" data-id="prv1">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[1]=0</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv2">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[2]=1</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv3">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[3]=2</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv8">
+                              <text fill="red" font-size="12" font-family="Verdana" x="10" y="40">prv[8]=3</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="red" stroke-width="4" fill="none" marker-end="url(#arrowred)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv4">
+                              <text fill="red" font-size="12" font-family="Verdana" x="10" y="40">prv[4]=8</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="red" stroke-width="4" fill="none" marker-end="url(#arrowred)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv5">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[5]=4</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv6">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[6]=5</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv7">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[7]=6</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                        <svg width="70" height="50" data-id="prv9">
+                              <text fill="#ffffff" font-size="12" font-family="Verdana" x="10" y="40">prv[9]=7</text>
+                              <path d="M 60 10 C 70 10 33 50 5 10" stroke="blue" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+                            </svg>
+                    </div>
+                    <svg width="160" height="60" data-id="arrow1">
+                            <polygon points="0 0 160 0 160 60 0 60" style="fill:lime;stroke:purple;stroke-width:2;" />
+                            <text fill="#ffffff" font-size="24" font-family="Verdana" x="40" y="40">S(8, 4)</text>
+                        </svg>
+                </section>
+
+
+            </section>
+
+        </div>
+
     </div>
-</div>
 
-        <div class="content">
+    <script src="../dist/reveal.js"></script>
+    <script src="../plugin/zoom/zoom.js"></script>
+    <script src="../plugin/notes/notes.js"></script>
+    <script src="../plugin/search/search.js"></script>
+    <script src="../plugin/markdown/markdown.js"></script>
+    <script src="../plugin/highlight/highlight.js"></script>
+    <script src="../plugin/math/math.js"></script>
+    <script>
+        // Also available as an ES module, see:
+        // https://revealjs.com/initialization/
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            history: true,
+            transition: 'linear',
 
-<p>Random somethings.</p>
+            mathjax2: {
+                config: 'TeX-AMS_HTML-full',
+                TeX: {
+                    Macros: {
+                        R: '\\mathbb{R}',
+                        set: ['\\left\\{#1 \\; ; \\; #2\\right\\}', 2]
+                    },
+                }
+            },
 
-<ul class="list">
-    <li>
-        <span>turtle19017 - 02-25-22</span>
-     
-    </li>
-<!--     <li>
-        <span>Cu64 - 2021-09-08</span>
-        <a href="/posts/jht-kid-protocol/">Junior Hacking Talent - Kid Protocol Writeup</a>
-    </li>
-    <li>
-        <span>Cu64 - 2021-09-08</span>
-        <a href="/posts/jht-ma-may/">Junior Hacking Talent - Mã Máy Writeup</a>
-    </li>
-    <li>
-        <span>Cu64 - 2021-09-07</span>
-        <a href="/posts/jht-bof/">Junior Hacking Talent - Buffer Overflow Writeup</a>
-    </li>
-    <li>
-        <span>Cu64 - 2021-05-17</span>
-        <a href="/posts/pi-network/">Pi Network&#39;s heel of Achilles</a>
-    </li>
-    <li>
-        <span>Cu64 - 2021-02-18</span>
-        <a href="/posts/public-aws-s3-buckets/">Public Amazon S3 Buckets and the risk of data leakage</a>
-    </li> -->
-</ul>
-</div>
-    </div>
-    <script src="/js/theme-switcher.js"></script>
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.MathJax2]
+        });
+    </script>
 
 </body>
+
 </html>
